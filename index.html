@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Krypto Header</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+  <body>
+    <div>
+      <div class="itc_chart_header">
+        <div class="itc_chart_menu">
+          <div class="itc_chart_menu_item">
+            <div style="display: flex; gap: 4; align-items: center">
+              <span
+                class="itc_chart_separate_over_item"
+                style="margin-right: 5px"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-bookmark"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"
+                  />
+                </svg>
+              </span>
+              <!-- <RxBookmark class="itc_chart_separate_over_item" /> -->
+              <!-- <RxCross2 class="itc_chart_separate_over_item2" /> -->
+              <span class="itc_chart_separate_over_item2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-x-lg"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+          <div class="itc_chart_menu_item itc_chart_hover_item">
+            <input type="text" class="inputSearch" id="itc_chart_input" />
+            <div id="itc_chart_open_div"></div>
+          </div>
+          <div
+            class="itc_chart_menu_item itc_chart_hover_item itc_chart_dropdown"
+          >
+            <span class="dropbtn" style="padding: 10px">30min</span>
+            <div class="dropdown-content">
+              <li>5m</li>
+              <li>1m</li>
+              <li>2w</li>
+              <li>7d</li>
+              <li>1d</li>
+              <li>12h</li>
+              <li>2h</li>
+              <li>1h</li>
+              <li>30min</li>
+            </div>
+          </div>
+          <div class="itc_chart_menu_item itc_chart_hover_item">
+            <span style="padding: 1px">1m</span>
+          </div>
+          <div
+            class="itc_chart_menu_item itc_chart_hover_item itc_chart_dropdown"
+          >
+            <span class="dropbtn" style="display: flex; align-items: center">
+              <!-- <HiOutlineArrowTrendingUp /> -->
+              <span class="material-symbols-outlined"> show_chart </span>
+            </span>
+            <div class="dropdown-content">
+              <li style="display: flex; align-items: center">
+                <!-- <MdOutlineCandlestickChart /> -->
+                <span class="material-symbols-outlined">
+                  candlestick_chart
+                </span>
+                <span style="margin-left: 5px">Candlestick</span>
+              </li>
+              <li style="display: flex; align-items: center">
+                <!-- <HiOutlineArrowTrendingUp /> -->
+                <span class="material-symbols-outlined"> show_chart </span>
+                <span style="margin-left: 5px">Line</span>
+              </li>
+            </div>
+          </div>
+          <div
+            class="itc_chart_menu_item itc_chart_hover_item itc_chart_dropdown2"
+          >
+            <div
+              class="dropbtn2"
+              style="display: flex; align-items: center; gap: 5px"
+            >
+              <!-- <MdTimeline /> -->
+              <span class="material-symbols-outlined"> timeline </span>
+              <span class="">Indicator</span>
+            </div>
+            <div class="dropdown-content2">
+              <section style="display: flex">
+                <div style="width: 300px">
+                  <div>
+                    <li data-key="EMA" class="itc_chart_item">
+                      <span>Exponential Moving Average (EMA)</span>
+                    </li>
+                    <li data-key="SMA" class="itc_chart_item">
+                      <span>Simple Moving Average (SMA)</span>
+                    </li>
+                    <li data-key="BBands" class="itc_chart_item">
+                      <span>Bollinger Bands (BBands)</span>
+                    </li>
+                    <li data-key="ATR" class="itc_chart_item">
+                      <span>Average True Range (ATR)</span>
+                    </li>
+                    <li data-key="MACD" class="itc_chart_item">
+                      <span>MACD</span>
+                    </li>
+                    <li data-key="SO" class="itc_chart_item">
+                      <span>Stochastic Oscillator</span>
+                    </li>
+                    <li data-key="RSI" class="itc_chart_item">
+                      <span>Relative Strength Index (RSI)</span>
+                    </li>
+                    <li data-key="CCI" class="itc_chart_item">
+                      <span>Commodity Channel Index (CCI)</span>
+                    </li>
+                    <li data-key="ROC" class="itc_chart_item">
+                      <span>Rate of Change (ROC)</span>
+                    </li>
+                    <li data-key="ADX" class="itc_chart_item">
+                      <span>Average Directional Index (ADX)</span>
+                    </li>
+                  </div>
+                </div>
+                <div id="itc_chart_container" style="width: 300px">
+                  <!-- some items input here!  -->
+
+                  <!-- <button id="open-modal-btn">Open Modal</button>
+                  <div id="modal" class="modal">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <span class="close-btn">&times;</span>
+                        <h2>Modal Header</h2>
+                      </div>
+                      <div class="modal-body">
+                        <p>
+                          This is the modal body. Lorem ipsum dolor sit amen,
+                          consectetur advising elite.
+                        </p>
+                      </div>
+                      <div class="modal-footer">
+                        <button id="reset-btn">Reset</button>
+                        <button id="cancel-btn">Cancel</button>
+                        <button id="apply-btn">Apply</button>
+                      </div>
+                    </div>
+                  </div> -->
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="itc_chart_menu_item itc_chart_hover_item">
+            <div style="display: flex; align-items: center; gap: 5px">
+              <!-- <CgExport /> -->
+              <span class="material-symbols-outlined"> ios_share </span>
+              <span>Export</span>
+            </div>
+          </div>
+          <div class="itc_chart_menu_item itc_chart_hover_item">
+            <div style="display: flex; align-items: center; gap: 5px">
+              <!-- <BsAlarm /> -->
+              <span class="material-symbols-outlined"> alarm </span>
+              <span>Alert</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dark & Light -->
+      <div class="theme-switch-wrapper">
+        <em style="margin-right: 8px; font-weight: bold">Light</em>
+        <label class="theme-switch" for="checkbox">
+          <input type="checkbox" id="checkbox" />
+          <div class="slider round"></div>
+        </label>
+        <em style="font-weight: bold">Dark</em>
+      </div>
+      <!-- Modal -->
+
+      <button id="open-modal-btn">Open Modal</button>
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close-btn">&times;</span>
+            <h4>Exponential Moving Average (EMA)</h4>
+          </div>
+          <div class="modal-body">
+            <p>
+              <strong>Main settings</strong>
+            </p>
+            <div style="display: flex; justify-content: space-between">
+              <div>
+                <p>Period</p>
+                <input type="text" value="14" name="period" />
+              </div>
+              <div>
+                <p>Color</p>
+                <div>
+                  <div>
+                    <div id="color-selected"></div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <p>Thinness</p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button id="reset-btn">Reset</button>
+            <button id="cancel-btn">Cancel</button>
+            <button id="apply-btn">Apply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/app.js"></script>
+  </body>
+</html>
