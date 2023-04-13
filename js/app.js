@@ -40,6 +40,7 @@ let indicatorItems = [];
 for (let i = 0; i < itc_chart_item.length; i++) {
   itc_chart_item[i].addEventListener("click", function () {
     const item = this.getAttribute("data-key");
+    const itemValue = this.getAttribute("data-value");
     if (!indicatorItems.includes(item)) {
       indicatorItems.push(item);
       const div = document.createElement("div");
@@ -61,35 +62,41 @@ for (let i = 0; i < itc_chart_item.length; i++) {
       <div id="modal" class="modal">
         <div class="modal-content">
           <div class="modal-header">
-            <span class="close-btn">&times;</span>
-            <h4>${item}</h4>
+            
+            <h4 style="color: black">${itemValue}</h4>
           </div>
           <div class="modal-body">
-            <p>
+            <p style="margin-bottom: 10px">
               <strong>Main settings</strong>
             </p>
-            <div style="display: flex; justify-content: space-between">
-              <div>
-                <p>Period</p>
-                <input type="text" value="14" name="period" />
+            <div style="display: flex; justify-content: space-between; margin-top: 10px">
+              <div class='itc_chart_indicator-period'>
+                <p style="color: #8d8f97">Period</p>
+                <input class='itc_chart_indicator-input' type="text" value="14" name="period" />
               </div>
               <div>
-                <p>Color</p>
-                <div>
-                  <div>
-                    <div id="color-selected"></div>
-                  </div>
-                </div>
+                <p style="color: #8d8f97">Color</p>
+                <div id="colorBox" style="background-color: #000; cursor: none"></div>
+                <label for="colorPicker">Pick a color:</label>
+                <input type="color" style="cursor: pointer" id="colorPicker" onchange="updateColor()" />
               </div>
               <div>
-                <p>Thinness</p>
+                <p style="color: #8d8f97">Thinness</p>
+                <hr width="100%" id="borderLine">
+                <label for="borderSelect">Select border thickness:</label>
+                <select id="borderSelect" onchange="updateBorder()">
+                  <option value="1">Thin</option>
+                  <option value="2">Medium</option>
+                  <option value="3">Moderate</option>
+                  <option value="4">Thick</option>
+                </select>
               </div>
             </div>
           </div>
           <div class="modal-footer">
-            <button id="reset-btn">Reset</button>
-            <button id="cancel-btn">Cancel</button>
-            <button id="apply-btn">Apply</button>
+            <button onclick="resetModal()" id="reset-btn">Reset</button>
+            <button onclick='modalClose()' id="cancel-btn">Cancel</button>
+            <button onclick="applyModal()" id="apply-btn">Apply</button>
           </div>
         </div>
       </div>
@@ -108,35 +115,49 @@ for (let i = 0; i < itc_chart_item.length; i++) {
   });
 }
 
-// Modal JS
-const modal = document.getElementById("modal");
-// const openModalBtn = document.getElementById("open-modal-btn");
-const closeBtn = document.querySelector(".close-btn");
-const resetBtn = document.getElementById("reset-btn");
-const cancelBtn = document.getElementById("cancel-btn");
-const applyBtn = document.getElementById("apply-btn");
+// Indicator Modal JS
 
-// openModalBtn.addEventListener("click", function () {
-//   modal.style.display = "block";
-// });
-
-closeBtn.addEventListener("click", function () {
-  document.getElementById("modal").style.display = "none";
-});
-
-resetBtn.addEventListener("click", function () {
-  console.log("Reset button clicked");
-});
-
-cancelBtn.addEventListener("click", function () {
-  document.getElementById("modal").style.display = "none";
-});
-
-applyBtn.addEventListener("click", function () {
-  console.log("Apply button clicked");
-});
+function applyModal() {
+  console.log("apply modal");
+}
+function resetModal() {
+  console.log("reset modal");
+}
 
 function modalOpen() {
   document.getElementById("modal").style.display = "block";
 }
+function modalClose() {
+  document.getElementById("modal").style.display = "none";
+}
+// Color picker JS
+function updateColor() {
+  const colorPicker = document.getElementById("colorPicker");
+  const colorBox = document.getElementById("colorBox");
+  const color = colorPicker.value;
+  colorBox.style.backgroundColor = color;
+}
 
+function updateBorder() {
+  const borderSelect = document.getElementById("borderSelect");
+  const borderLine = document.getElementById("borderLine");
+  const thickness = borderSelect.value;
+  borderLine.style.borderTopWidth = thickness + "px";
+}
+
+// Export Modal Js
+
+function exportModalOpen() {
+  document.getElementById("export-modal").style.display = "block";
+}
+function exportModalClose() {
+  document.getElementById("export-modal").style.display = "none";
+}
+
+// Alert Modal Js
+function alertModalOpen() {
+  document.getElementById("alert-modal").style.display = "block";
+}
+function alertModalClose() {
+  document.getElementById("alert-modal").style.display = "none";
+}
